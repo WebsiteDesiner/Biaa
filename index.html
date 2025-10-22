@@ -32,6 +32,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .logo {
@@ -101,6 +108,38 @@
             font-weight: 500;
             text-transform: none;
             letter-spacing: 0.5px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover img {
+            transform: scale(1.1);
         }
 
         .live-indicator {
@@ -794,15 +833,20 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">
-            <div class="logo-icon">
-                <img src="logo.png" alt="Binance AI Arena" style="width: 100%; height: 100%; object-fit: contain;">
+        <div class="header-left">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="Binance AI Arena" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">BAA</div>
+                    <div class="logo-sub">Binance AI Arena</div>
+                </div>
+                <span class="live-indicator"></span>
             </div>
-            <div class="logo-text">
-                <div class="logo-main">BAA</div>
-                <div class="logo-sub">Binance AI Arena</div>
-            </div>
-            <span class="live-indicator"></span>
+            <a href="https://x.com/BinanceAIArena" target="_blank" rel="noopener noreferrer" class="social-link" title="关注我们的X官方账号">
+                <img src="X.png" alt="X (Twitter)">
+            </a>
         </div>
         <div class="control-panel">
             <div class="save-status">
@@ -849,7 +893,7 @@
                 <div class="info-title">Binance AI Arena - BNB/USDT Trading Championship</div>
                 <div class="info-description">
                     4个顶级AI模型：<strong>Claude 4.5 vs Grok 4 vs GPT-4.0 vs DeepSeek</strong>，在真实BNB/USDT市场中进行<strong>1x杠杆合约交易</strong>对决。每个AI从<strong>100 BNB</strong>起步，可做多做空，看谁的策略能获得最高收益！
-                    <div class="info-note">💾 数据自动保存在您的浏览器本地 方便提取交易数据从而分析其价值</div>
+                    <div class="info-note">💾 数据自动保存在您的浏览器本地，方便提取交易数据从而分析其价值</div>
                 </div>
                 <div class="info-strategies">
                     <div class="strategy-tag">
@@ -2284,7 +2328,7 @@
             setInterval(saveData, CONFIG.AUTO_SAVE_INTERVAL);
             
             console.log('✅ 系统启动成功！');
-            console.log('💾 数据会自动保存在浏览器本地，每个浏览器独立运行');
+            console.log('💾 数据会自动保存在浏览器本地，方便提取交易数据从而分析其价值');
         }
 
 
@@ -2300,5 +2344,4 @@
     </script>
 </body>
 </html>
-
 </html>
